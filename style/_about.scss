@@ -1,0 +1,50 @@
+.about {
+    margin: 60px 0px 60px ;
+}
+
+.about_cont {
+    @include flex (row, center, center, wrap);
+}
+
+.about_box {
+    padding: 0px 8px 30px;
+    width: 100%;    
+    .about_box_img {
+        background: $color_bg_first;
+        border-radius: 4px;
+        // width: 100%;
+        padding: 25px 0px;
+        text-align: center;
+    }
+    h3 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 30px 0px 10px;
+        text-align: center;
+    }
+    p {
+        font-size: 14px;
+        color: $colot_text_first;
+        line-height: 24px;
+    }
+}
+
+
+@media screen and (min-width:$mobile) {
+    .about_cont {
+        @include flex (row, space-between, center, wrap);
+    }
+    .about_cont_block {
+        width: 50%;
+    }
+    .about_box {
+        height: 270px;
+    }
+}
+
+@media screen and (min-width:$notebook) {
+    .about_cont_block {
+        width: 25%;
+    }
+}

@@ -1,0 +1,46 @@
+.clients {
+    padding: 60px 0px;
+}
+
+.clients_cont{
+    h2 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
+
+.clients_cont_block{
+    @include flex (row, center, center, wrap);
+}
+
+.clients_box {
+    width: 40%;
+    height: 90px;
+    border: 1px solid $colot_text_fourth;
+    border-radius: 4px;
+    padding: 20px; 
+    cursor: pointer;
+    margin: 5px;
+    &:hover {
+        background: $colot_text_second;
+    }
+    a {
+        display: block;
+        text-align: center;
+    }
+}
+
+
+@media screen and (min-width:$mobile) {
+    .clients_box {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width:$notebook) {
+    .clients_box {
+        width: 15%;
+    }
+}
