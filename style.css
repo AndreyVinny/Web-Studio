@@ -10,12 +10,27 @@
   padding: 0px 15px;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 480px) {
   .conteiner {
-    max-width: 1170px;
+    width: 450px;
     margin: 0 auto;
   }
 }
+@media screen and (min-width: 769px) {
+  .conteiner {
+    padding: 0px;
+    width: 738px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .conteiner {
+    width: 1170px;
+  }
+}
+header {
+  overflow: hidden;
+}
+
 .header_top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,24 +62,22 @@
 }
 
 nav {
-  display: none;
   position: absolute;
   top: -445px;
-  -webkit-transition: all 1s ease-out;
-  transition: all 1s ease-out;
-  left: -20px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
   background: #fff;
-  width: 110%;
+  width: 184%;
+  left: -42%;
   border-top: 1px solid #ECECEC;
   -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
   z-index: 10;
   color: #212121;
   padding: 50px 0px;
-  overflow: hidden;
+  z-index: 100;
 }
 nav.active {
-  display: block;
   top: 60px;
 }
 
@@ -199,13 +212,19 @@ nav.active {
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+.button:hover, .button:focus, .button:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .nav_info_big {
   display: none;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 769px) {
   .header_top {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -222,7 +241,7 @@ nav.active {
             align-items: center;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    padding: 20px 15px;
+    padding: 20px 15px 0px 15px;
   }
 
   .nav_info {
@@ -231,7 +250,7 @@ nav.active {
 
   .nav_info_big {
     display: block;
-    width: 220px;
+    width: 30%;
   }
   .nav_info_big a {
     font-size: 12px;
@@ -244,6 +263,10 @@ nav.active {
     padding-right: 6px;
   }
 
+  .main_logo {
+    width: 30%;
+  }
+
   nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -252,15 +275,16 @@ nav.active {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     position: static;
+    width: 60%;
     top: 0;
     left: 0;
     overflow: hidden;
@@ -287,47 +311,40 @@ nav.active {
             align-items: center;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    width: 80%;
     margin-right: 10%;
   }
   .nav_menu .nav_item {
     list-style-type: none;
     margin-bottom: 0px;
-    margin: 0px 5px;
+    margin: 0px 25px;
   }
   .nav_menu .nav_item .nav_item_link {
+    display: inline-block;
     font-weight: 500;
     font-size: 14px;
     color: #212121;
     text-decoration: none;
-    padding: 10px 0px;
+    padding: 27px 0px;
   }
-
-  .nav_info {
-    text-align: left;
-    width: 200px;
-    margin-top: 0px;
+  .nav_menu .nav_item .nav_item_link:hover, .nav_menu .nav_item .nav_item_link:focus, .nav_menu .nav_item .nav_item_link:active {
+    color: #2196F3;
   }
-  .nav_info a {
-    font-size: 12px;
-    display: block;
-    text-decoration: none;
-    color: #757575;
-    margin-bottom: 10px;
-  }
-  .nav_info a img {
-    padding-right: 8px;
+  .nav_menu .nav_item .nav_item_link:hover::after, .nav_menu .nav_item .nav_item_link:focus::after, .nav_menu .nav_item .nav_item_link:active::after {
+    top: 67px;
   }
 
   .ham_menu {
     display: none;
-    visibility: hidden;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1200px) {
   .header_cont_main {
     height: 600px;
     padding: 230px 60px;
+  }
+
+  .main_logo {
+    width: 18%;
   }
 
   nav {
@@ -364,7 +381,25 @@ nav.active {
             align-items: center;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    width: 80%;
+  }
+
+  .nav_info_big {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    width: 25%;
   }
 }
 .about {
@@ -412,7 +447,7 @@ nav.active {
   line-height: 24px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 769px) {
   .about_cont {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -439,7 +474,7 @@ nav.active {
     height: 270px;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1200px) {
   .about_cont_block {
     width: 25%;
   }
@@ -504,14 +539,26 @@ nav.active {
   padding: 4px;
 }
 
-@media screen and (min-width: 480px) {
-  .team_box {
-    width: 49%;
-  }
-}
 @media screen and (min-width: 769px) {
   .team_box {
+    width: 49%;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+  }
+  .team_box:hover, .team_box:focus, .team_box:active {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .team_box {
     width: 24%;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+  }
+  .team_box:hover, .team_box:focus, .team_box:active {
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
   }
 }
 .clients {
@@ -560,12 +607,12 @@ nav.active {
   text-align: center;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 769px) {
   .clients_box {
     width: 30%;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1200px) {
   .clients_box {
     width: 15%;
   }
@@ -612,9 +659,16 @@ footer {
       flex-wrap: wrap;
   width: 100%;
 }
-.footer_contact .main_logo {
+.footer_contact .main_logo_footer {
+  font-family: "Raleway", sans-serif;
   color: #fff;
+  font-size: 24px;
   margin-bottom: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer_contact .main_logo_footer span {
+  color: #2196F3;
 }
 .footer_contact .footer_contact_main {
   display: -webkit-box;
@@ -678,6 +732,12 @@ footer {
   min-height: 40px;
   position: relative;
   margin: 5px;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+.footer_social .footer_social_item a:hover, .footer_social .footer_social_item a:focus, .footer_social .footer_social_item a:active {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
 }
 .footer_social .footer_social_item a img {
   position: absolute;
@@ -769,12 +829,18 @@ footer {
   font-size: 16px;
   margin-top: 30px;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+.footer_spam .footer_spam_item button:hover, .footer_spam .footer_spam_item button:focus, .footer_spam .footer_spam_item button:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 .footer_spam .footer_spam_item button img {
   padding-left: 10px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 769px) {
   .footer_contact {
     width: 50%;
   }
@@ -788,7 +854,7 @@ footer {
     width: 80%;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1200px) {
   .footer_cont {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -856,7 +922,7 @@ footer {
   display: none;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1200px) {
   .work {
     display: block;
     padding: 60px 0px 94px;

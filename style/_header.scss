@@ -1,6 +1,11 @@
+header {
+    overflow: hidden;
+}
+
 .header_top {
     @include flex (row, space-between, center, nowrap);
     position: relative;
+
 }
 
 .main_logo {
@@ -15,21 +20,19 @@
 }
 
 nav {
-    display: none;
     position: absolute;
     top: -445px;
-    transition: all 1s ease-out;
-    left: -20px;
+    transition: all .5s ease-out;
     background: #fff;
-    width: 110%;
+    width: 184%;
+    left: -42%;
     border-top: 1px solid $colot_text_second;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
     z-index: 10;
     color: $color_main_text;
     padding: 50px 0px;
-    overflow: hidden;
+    z-index: 100;
     &.active {
-        display: block;
         top: 60px;
         }
     }
@@ -140,19 +143,23 @@ nav {
     cursor: pointer;
     font-weight: bold;
     font-size: 16px;
+    transition: all .4s ease-out;
+    &:hover,
+    &:focus,
+    &:active {
+        transform: scale(1.2);
+    }
 }
-
 
 .nav_info_big {
     display: none;
+    
 }
 
-
-
-@media screen and (min-width:$mobile) {
+@media screen and (min-width:$notebook) {
     .header_top {
         @include flex (row, space-between, center, nowrap);
-        padding: 20px 15px;
+        padding: 20px 15px 0px 15px;
     }
 
     .nav_info {
@@ -161,7 +168,7 @@ nav {
 
     .nav_info_big {
         display: block;
-        width: 220px;
+        width: 30%;
         a {
             font-size: 12px;
             display: block;
@@ -174,10 +181,14 @@ nav {
         }
     }
 
+    .main_logo {
+        width: 30%;
+    }
+
     nav {
-        // width: 90%;
-        @include flex (row, flex-start, center, nowrap);
+        @include flex (row, center, center, nowrap);
         position: static;
+        width: 60%;
         top: 0;
         left: 0;
         overflow: hidden;
@@ -189,51 +200,43 @@ nav {
     
     .nav_menu{
         @include flex (row, space-between, center, nowrap);
-        width: 80%;
         margin-right: 10%;
         .nav_item{
             list-style-type: none;
             margin-bottom: 0px;
-            margin: 0px 5px;
+            margin: 0px 25px;
             .nav_item_link {
+                display: inline-block;
                 font-weight: 500;
                 font-size: 14px;
                 color: $color_main_text;
                 text-decoration: none;
-                padding: 10px 0px;
+                padding: 27px 0px;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color_spec;
+                     &::after {
+                        top: 67px;
+                    }
+                } 
             }
         }       
     }
     
-    .nav_info {
-        text-align: left;
-        width: 200px;
-        margin-top: 0px;
-        a {
-            font-size: 12px;
-            display: block;
-            text-decoration: none;
-            color: $colot_text_first;
-            margin-bottom: 10px;
-            img {
-                padding-right: 8px;
-            }
-        }
-    }
-    
     .ham_menu {
         display: none;
-        visibility: hidden;
     }
-
 }
 
-
-
-@media screen and (min-width: $notebook){
+@media screen and (min-width: $pc){
     .header_cont_main {
         height: 600px;
         padding: 230px 60px;
+    }
+
+    .main_logo {
+        width: 18%;
     }
 
     nav {
@@ -242,6 +245,10 @@ nav {
 
     .nav_menu{
         @include flex (row, flex-start, center, nowrap);
-        width: 80%;
+    }
+
+    .nav_info_big {
+        @include flex (row, space-between, center, nowrap);
+        width: 25%;
     }
 }

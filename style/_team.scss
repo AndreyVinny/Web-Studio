@@ -44,14 +44,26 @@
     }
 }
 
-@media screen and (min-width:$mobile) {
+@media screen and (min-width:$notebook) {
     .team_box {  
-        width: 49%
+        width: 49%;
+        transition: all .4s ease-out;
+        &:hover,
+        &:focus,
+        &:active {
+            transform: scale(1.1);
+        }
     }
 }
 
-@media screen and (min-width:$notebook) {
+@media screen and (min-width:$pc) {
     .team_box {  
-        width: 24%
+        width: 24%;
+        transition: all .4s ease-out;
+        &:hover,
+        &:focus,
+        &:active {
+            transform: translateY(-5%);
+        }
     }
 }

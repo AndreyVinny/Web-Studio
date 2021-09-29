@@ -11,10 +11,18 @@ footer {
 .footer_contact {
     @include flex (column, center, center, wrap);
     width: 100%;
-    .main_logo {
+    .main_logo_footer {
+        font-family: 'Raleway', sans-serif;
         color: $colot_text_third;
+        font-size: 24px;
         margin-bottom: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        span {
+            color: $color_spec;
+        }
     }
+
     .footer_contact_main{
         @include flex (column, center, center, wrap);
         span {
@@ -48,6 +56,12 @@ footer {
             min-height: 40px;
             position: relative;
             margin: 5px;
+            transition: all .4s ease-out;
+            &:hover,
+            &:focus,
+            &:active {
+                transform: scale(1.4);
+            }
             img {
                 position: absolute;
                 top: 50%;
@@ -98,6 +112,12 @@ footer {
             font-size: 16px;
             margin-top: 30px;
             cursor: pointer;
+            transition: all .4s ease-out;
+            &:hover,
+            &:focus,
+            &:active {
+                transform: scale(1.2);
+            }
             img {
                 padding-left: 10px;
             }
@@ -105,7 +125,7 @@ footer {
     }
 }
 
-@media screen and (min-width:$mobile) {
+@media screen and (min-width:$notebook) {
     .footer_contact {
         width: 50%;
     }
@@ -123,8 +143,7 @@ footer {
     }
 }
 
-
-@media screen and (min-width:$notebook) {
+@media screen and (min-width:$pc) {
     .footer_cont {
         @include flex (row, center, flex-start, wrap);
     }

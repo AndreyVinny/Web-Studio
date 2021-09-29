@@ -12,7 +12,6 @@
     .about_box_img {
         background: $color_bg_first;
         border-radius: 4px;
-        // width: 100%;
         padding: 25px 0px;
         text-align: center;
     }
@@ -30,8 +29,7 @@
     }
 }
 
-
-@media screen and (min-width:$mobile) {
+@media screen and (min-width:$notebook) {
     .about_cont {
         @include flex (row, space-between, center, wrap);
     }
@@ -43,7 +41,7 @@
     }
 }
 
-@media screen and (min-width:$notebook) {
+@media screen and (min-width:$pc) {
     .about_cont_block {
         width: 25%;
     }
