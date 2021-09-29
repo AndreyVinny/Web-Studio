@@ -9,6 +9,13 @@
 .about_box {
     padding: 0px 8px 30px;
     width: 100%;    
+    opacity: 0;
+    transform: translate(0px, 50%);
+    transition: all 1s ease;
+    &._active {
+        opacity: 1;
+        transform: translate(0px, 0px);
+   }
     .about_box_img {
         background: $color_bg_first;
         border-radius: 4px;

@@ -184,7 +184,7 @@ nav.active {
 }
 
 .header_cont {
-  background-image: url(./img/header_bg.jpg);
+  background-image: url(./img/header_bg.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -201,6 +201,16 @@ nav.active {
   text-transform: uppercase;
   line-height: 42px;
   margin-bottom: 30px;
+  opacity: 0;
+  -webkit-transform: translate(0px, 50%);
+          transform: translate(0px, 50%);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.header_cont_main h2._active {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 
 .button {
@@ -427,6 +437,16 @@ nav.active {
 .about_box {
   padding: 0px 8px 30px;
   width: 100%;
+  opacity: 0;
+  -webkit-transform: translate(0px, 50%);
+          transform: translate(0px, 50%);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.about_box._active {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 .about_box .about_box_img {
   background: #F5F4FA;
@@ -519,6 +539,16 @@ nav.active {
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   margin-bottom: 30px;
+  opacity: 0;
+  -webkit-transform: translate(0px, 50%);
+          transform: translate(0px, 50%);
+  -webkit-transition: all 1.3s ease;
+  transition: all 1.3s ease;
+}
+.team_box._active {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 .team_box .team_box_img {
   width: 100%;
@@ -944,6 +974,16 @@ footer {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    opacity: 0;
+    -webkit-transform: translate(0px, 60%);
+            transform: translate(0px, 60%);
+    -webkit-transition: all 1.3s ease;
+    transition: all 1.3s ease;
+  }
+  .work_cont_block._active {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
   }
 
   .work_cont h2 {
